@@ -23,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased `} >
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-linear-to-br from-purple-100 to-purple-200`} >
                 <div className="relative h-screen">
                     <div className="absolute inset-0">
                         <Navbar />
