@@ -8,7 +8,6 @@ export async function POST(request) {
     const collection = db.collection("url")
 
     const doc =await collection.findOne({ shorturl: body.shorturl })
-    console.log(doc)
     if (doc) {
         return Response.json({ error: true, message: "URL Already exists" })
     }

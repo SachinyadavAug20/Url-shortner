@@ -5,6 +5,7 @@ import { useState } from "react"
 import { ToastContainer } from "react-toastify";
 import { Bounce } from "react-toastify";
 import { toast } from "react-toastify";
+import Link from 'next/link';
 
 const app = () => {
     const [input, setInput] = useState("");
@@ -143,14 +144,15 @@ const app = () => {
                 <div className="mt-6 p-4 bg-purple-50 border border-purple-200 rounded-lg w-1/3">
                     <p className="text-sm font-medium text-purple-800 mb-2">Your Short URL:</p>
                     <div className="flex items-center space-x-2 mb-4 w-full justify-between">
-                        <code className='w-full'>
-
-                            <input
-                                type="text"
-                                value={output}
-                                readOnly
-                                className="flex-1 px-3 py-2 bg-white border border-gray-300 w-11/12 rounded-md text-gray-900 font-mono text-sm focus:outline-none"
-                            />
+                        <code className='w-full cursor-pointer'>
+                            <Link className='cursor-pointer' href={output}>
+                                <input
+                                    type="text"
+                                    value={output}
+                                    readOnly
+                                    className="flex-1 px-3 py-2 cursor-pointer bg-white border border-gray-300 w-11/12 rounded-md text-gray-900 font-mono text-sm focus:outline-none"
+                                />
+                            </Link>
                         </code>
                         <button
                             onClick={copyToClipboard}

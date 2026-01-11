@@ -1,6 +1,11 @@
+"use client"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 const Navbar = () => {
+    const pathname=usePathname()
+    let location = pathname.slice(pathname.lastIndexOf("/")+1)
+    
     return (
         <nav className="h-fit py-4 flex text-xl pl-4 text-white font-semibold items-center gap-6 list-none bg-purple-700 justify-between">
             <ul className="flex h-full justify-center items-center gap-5">
@@ -10,10 +15,10 @@ const Navbar = () => {
                             URL<span className="text-white group-hover:text-purple-200 transition-colors">shortner</span>
                         </span>
                     </div></Link>
-                <Link href="/"> <li>Home</li></Link>
-                <Link href="/about"> <li>About</li></Link>
-                <Link href="/generate"> <li>Shortener</li></Link>
-                <Link href="/contact"> <li>Contact us</li></Link>
+                <Link href="/"> <li className={(location=="")?"bg-white/20 py-1 px-3 border-2 border-purple-900 rounded-3xl":"py-1"}>Home</li></Link>
+                <Link href="/about"> <li className={(location=="about")?"bg-white/20 py-1 px-3 border-2 border-purple-900 rounded-3xl":"py-1"}>About</li></Link>
+                <Link href="/generate"> <li className={(location=="generate")?"bg-white/20 py-1 px-3 border-2 border-purple-900 rounded-3xl":"py-1"}>Shortener</li></Link>
+                <Link href="/contact"> <li className={(location=="contact")?"bg-white/20 px-3 py-1 border-2 border-purple-900 rounded-3xl":"py-1"}>Contact us</li></Link>
             </ul>
             <li className="place-self-start flex gap-4 px-10">
                 <Link href="/generate">

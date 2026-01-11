@@ -5,6 +5,9 @@
 .Protest_Guerrilla{
     font-family: "Crafty Girls";
 }
+*{
+    transition: all ease-in-out 300ms;
+}
 *::selection{
     background-color: black;
     color: yellow;
